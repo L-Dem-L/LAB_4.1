@@ -2,8 +2,10 @@
 using namespace std;
 
 int main() {
-    int N = 10;
+    int N;
     double result = 0.0;
+
+    cout << "N = "; cin >> N;
 
     // while цикл
     int i = N;
