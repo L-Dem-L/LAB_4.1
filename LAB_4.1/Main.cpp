@@ -1,40 +1,41 @@
 ﻿#include <iostream>
+#include <math.h>
 using namespace std;
 
 int main() {
     int N;
-    double result = 0.0;
+    double result = 1.0;
 
     cout << "N = "; cin >> N;
 
     // while цикл
     int i = N;
     while (i <= 16) {
-        result += 1.0 / (2 * i * i + N * N);
+        result *= i * N / (pow(i,2) + pow(N, 2));
         i++;
     }
     cout << "While: " << result << endl;
 
     // do-while цикл
     i = N;
-    result = 0.0;
+    result = 1.0;
     do {
-        result += 1.0 / (2 * i * i + N * N);
+        result *= i * N / (pow(i, 2) + pow(N, 2));
         i++;
     } while (i <= 16);
     cout << "Do-while: " << result << endl;
 
     // for цикл (++)
-    result = 0.0;
+    result = 1.0;
     for (i = N; i <= 16; i++) {
-        result += 1.0 / (2 * i * i + N * N);
+        result *= i * N / (pow(i, 2) + pow(N, 2));
     }
     cout << "For (++): " << result << endl;
 
     // for цикл (--)
-    result = 0.0;
+    result = 1.0;
     for (i = 16; i >= N; i--) {
-        result += 1.0 / (2 * i * i + N * N);
+        result *= i * N / (pow(i, 2) + pow(N, 2));
     }
     cout << "For (--): " << result << endl;
 
